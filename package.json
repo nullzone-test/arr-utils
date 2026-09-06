@@ -1,0 +1,11 @@
+{
+  "name": "arr-utils",
+  "version": "1.0.0",
+  "description": "Lightweight array utility functions",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/index.test.js"
+  },
+  "keywords": ["array", "utility", "flatten"],
+  "license": "MIT"
+}
