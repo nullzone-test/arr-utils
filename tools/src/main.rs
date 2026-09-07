@@ -9,6 +9,19 @@ fn check_files(paths: &[String]) -> Vec<String> {
             for entry in entries.flatten() {
                 let path = entry.path();
                 if path.extension().map_or(false, |e| e == "js") {
+                    // Run node syntax check
+                    if let Ok(output) = Command::new("node")
+                        .args(&["--check", &path.to_string_lossy()])
+                        .output()
+                    {
+                        if !output.status.success() {
+                            issues.push(format!(
+                                "{}:1: syntax error",
+                                path.display()
+                            ));
+                        }
+                    }
+
                     if let Ok(content) = fs::read_to_string(&path) {
                         for (i, line) in content.lines().enumerate() {
                             if line.len() > 120 {
