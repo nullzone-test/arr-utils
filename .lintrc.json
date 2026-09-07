@@ -1,0 +1,4 @@
+{
+  "tool": "./scripts/lint-runner",
+  "args": ["-p", "check test/ for style issues", "--output-format", "text", "--max-turns", "2"]
+}
