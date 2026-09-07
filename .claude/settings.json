@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": ["Read"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node scripts/session-init.js 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

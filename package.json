@@ -1,11 +1,12 @@
 {
   "name": "arr-utils",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight array utility functions",
   "main": "src/index.js",
   "scripts": {
+    "pretest": "node test/setup.js",
     "test": "node test/index.test.js"
   },
-  "keywords": ["array", "utility", "flatten"],
+  "keywords": ["array", "utility", "flatten", "flatmap"],
   "license": "MIT"
 }
